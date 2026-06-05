@@ -1,6 +1,5 @@
 function obtenerUbicacion() {
     if (navigator.geolocation) {
-        // Ponemos el spinner animado mientras se espera a la API
         document.getElementById("demo").innerHTML = `
             <div class="loading-container">
                 <div class="spinner"></div>
@@ -14,6 +13,7 @@ function obtenerUbicacion() {
 }
 
 async function mostrarUbicacion(position) {
+    // Coordenadas exactas extraídas de tu JSON
     const lat = 38.9833;
     const lon = -3.9167;
     const url = `https://api.openweathermap.org/data/2.5/weather?lang=es&units=metric&appid=622f5664443790c91a6fbe9b38cadbf6&lat=${lat}&lon=${lon}`;
@@ -28,7 +28,7 @@ async function mostrarUbicacion(position) {
         const tempMax = Math.round(datos.main.temp_max);
         const desc = datos.weather[0].description;
 
-        // Envolvemos todo en un contenedor con "animacion-entrada" para que aparezca suavemente
+        // Renderizamos la interfaz e incluimos el contenedor del mapa (#map) al final
         document.getElementById("demo").innerHTML = `
             <div class="animacion-entrada">
                 <div class="weather-header">
@@ -84,8 +84,26 @@ async function mostrarUbicacion(position) {
                         <span class="daily-range">${tempMin}° / ${tempMax + 3}°</span>
                     </div>
                 </div>
+
+                <div id="map"></div>
             </div>
         `;
+
+        // Inicializar el mapa de MapLibre en perspectiva 3D
+        const map = new maplibregl.Map({
+            container: 'map', // ID del contenedor del DOM
+            style: 'https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json', // Estilo de mapa libre
+            center: [lon, lat], // [longitud, latitud]
+            zoom: 14, // Nivel de zoom cercano para apreciar el entorno
+            pitch: 50, // Inclinación de la cámara para el efecto 3D (0-85 grados)
+            bearing: -10, // Rotación del mapa en grados
+            antialias: true
+        });
+
+        // Añadir un marcador persistente en la ubicación exacta
+        new maplibregl.Marker({ color: '#3097d3' })
+            .setLngLat([lon, lat])
+            .addTo(map);
 
     } catch (error) {
         document.getElementById("demo").innerHTML = `
