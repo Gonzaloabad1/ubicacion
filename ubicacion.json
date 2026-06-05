@@ -1,0 +1,46 @@
+{
+    "coord": {
+        "lon": -3.9167,
+        "lat": 38.9833
+    },
+    "weather": [
+        {
+            "id": 800,
+            "main": "Clear",
+            "description": "cielo claro",
+            "icon": "01d"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 24.44,
+        "feels_like": 24.06,
+        "temp_min": 23.76,
+        "temp_max": 24.44,
+        "pressure": 1014,
+        "humidity": 43,
+        "sea_level": 1014,
+        "grnd_level": 941
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 4.47,
+        "deg": 266,
+        "gust": 10.28
+    },
+    "clouds": {
+        "all": 1
+    },
+    "dt": 1780570668,
+    "sys": {
+        "type": 2,
+        "id": 2009884,
+        "country": "ES",
+        "sunrise": 1780548669,
+        "sunset": 1780601825
+    },
+    "timezone": 7200,
+    "id": 2519402,
+    "name": "Ciudad Real",
+    "cod": 200
+}

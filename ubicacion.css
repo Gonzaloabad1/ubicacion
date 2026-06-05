@@ -1,0 +1,225 @@
+/* Reset y configuración del fondo de la pantalla */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-image: url('https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?q=80&w=1000&auto=format&fit=crop'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Botón de actualización */
+.btn-cargar {
+    background-image: linear-gradient(135deg, rgba(159, 46, 46, 0.716) 0%, rgba(255, 255, 255, 0.2) 100%); 
+    color: rgb(88, 105, 235);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 20px; /* Separación respecto a la tarjeta */
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    letter-spacing: 0.5px;
+}
+
+.btn-cargar:hover {
+    background-image: linear-gradient(135deg, rgba(68, 107, 249, 0.264) 0%, rgba(255, 255, 255, 0.3) 100%);
+    transform: scale(1.02);
+}
+
+/* Contenedor principal (Efecto interfaz de teléfono) */
+.weather-app {
+    background-color: rgba(14, 26, 61, 0.65); /* Azul oscuro semi-transparente */
+    backdrop-filter: blur(20px);               /* Efecto cristal premium */
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 390px;
+    min-height: 680px;
+    border-radius: 40px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+    padding: 30px 20px;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.placeholder-text {
+    text-align: center;
+    color: #e5e7eb;
+    margin: auto 0;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Cabecera: Ciudad y menú */
+.weather-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.weather-header h1 {
+    font-size: 26px;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* Temperatura Principal Gigante */
+.main-temp {
+    font-size: 96px;
+    font-weight: 200;
+    text-align: center;
+    margin: 15px 0 5px 0;
+    line-height: 1;
+    position: relative;
+    left: 8px;
+}
+
+/* Descripción secundaria */
+.weather-desc {
+    text-align: center;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+/* Estilo de Tarjetas Oscuras Translúcidas (Glassmorphism) */
+.weather-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 16px;
+    margin-bottom: 14px;
+}
+
+/* Tarjeta de Calidad del Aire */
+.aqi-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.aqi-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.aqi-info p {
+    margin: 0;
+    font-size: 12px;
+    color: #d1d5db;
+    line-height: 1.4;
+}
+
+.aqi-badge {
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.2) 100%);
+    border: 3px solid #22c55e;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Pronóstico por horas (Fila horizontal) */
+.hourly-flex {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.hourly-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+}
+
+.hourly-item .time { color: #d1d5db; }
+.hourly-item .temp { font-weight: 500; }
+
+/* Pronóstico de varios días (Lista vertical) */
+.daily-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #d1d5db;
+    margin: 0 0 10px 0;
+}
+
+.daily-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    font-size: 14px;
+}
+
+.daily-row:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.daily-day { width: 80px; }
+.daily-range { text-align: right; font-weight: 500; color: rgba(255, 255, 255, 0.9); }
+
+/* Contenedor para centrar el cargador vertical y horizontalmente */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto 0;
+    gap: 16px;
+}
+
+/* Clase que ejecuta la animación de entrada */
+.animacion-entrada {
+    animation: aparecerSuave 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes aparecerSuave {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* El círculo del cargador */
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-top: 4px solid #ffffff;
+    border-radius: 50%;
+    animation: girar 1s linear infinite;
+}
+
+@keyframes girar {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
