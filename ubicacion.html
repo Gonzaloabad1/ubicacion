@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Ubicación y Clima</title>
+    <link href="https://unpkg.com/maplibre-gl@^4.0.0/dist/maplibre-gl.css" rel="stylesheet" />
     <link rel="stylesheet" href="ubicacion.css">
+    <script src="https://unpkg.com/maplibre-gl@^4.0.0/dist/maplibre-gl.js"></script>
 </head>
 <body>
     <div id="demo" class="weather-app">
         <p class="placeholder-text">Haz clic en el botón para sincronizar el clima.</p>
     </div>
- <button class="btn-cargar" onclick="obtenerUbicacion()">OBTENER MI UBICACIÓN</button>
+    <button class="btn-cargar" onclick="obtenerUbicacion()">OBTENER MI UBICACIÓN</button>
     <script src="ubicacion.js"></script>
 </body>
 </html>
