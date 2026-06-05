@@ -17,8 +17,8 @@ body {
 
 /* Botón de actualización */
 .btn-cargar {
-    background-image: linear-gradient(135deg, rgba(159, 46, 46, 0.716) 0%, rgba(255, 255, 255, 0.2) 100%); 
-    color: rgb(88, 105, 235);
+    background-image: linear-gradient(135deg, rgba(48, 151, 211, 0.854) 0%, rgba(69, 244, 203, 0.2) 100%); 
+    color: rgb(255, 255, 255);
     border: 1px solid rgba(255, 255, 255, 0.15);
     padding: 12px 24px;
     font-size: 14px;
@@ -38,7 +38,7 @@ body {
 
 /* Contenedor principal (Efecto interfaz de teléfono) */
 .weather-app {
-    background-color: rgba(14, 26, 61, 0.65); /* Azul oscuro semi-transparente */
+    background-color: rgba(68, 104, 211, 0.189); /* Azul oscuro semi-transparente */
     backdrop-filter: blur(20px);               /* Efecto cristal premium */
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -46,10 +46,10 @@ body {
     max-width: 390px;
     min-height: 680px;
     border-radius: 40px;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 25px 50px -12px rgba(217, 212, 212, 0.591);
     padding: 30px 20px;
     box-sizing: border-box;
-    color: #ffffff;
+    color: #ffffffa1;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -57,7 +57,7 @@ body {
 
 .placeholder-text {
     text-align: center;
-    color: #e5e7eb;
+    color: #d1d1d1;
     margin: auto 0;
     font-size: 15px;
     line-height: 1.6;
@@ -222,4 +222,15 @@ body {
 @keyframes girar {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+/* Configuración y diseño del mapa */
+#map {
+    width: 100%;
+    max-width: 390px;
+    height: 250px;           /* Altura fija para que sea visible */
+    border-radius: 24px;
+    margin: 20px 0;          /* Margen arriba y abajo para separar los elementos */
+    box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(14, 26, 61, 0.4); /* Fondo de carga antes de que aparezcan las calles */
 }
